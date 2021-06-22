@@ -1,0 +1,38 @@
+<html>
+
+<head>
+		<title>JAVASCRIPT JQUERY AJAX</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+	
+<body>
+
+<center><h1>jQuery</h1></center>
+<center><button id="prvo">Pritisni</button></center>
+<br>		
+<center><button id="drugo">Dugme 2</button></center>	
+
+
+</body>
+
+
+</html>
+
+<script>
+$(document).ready(function(){
+	$('#prvo').click(function(){
+		$('h1').css('color','green');
+		$('h1').css('font-size','70px');
+		$('h1').after('<h2>AJAX</h2>');
+		
+	});
+	$('#drugo').click(function(){
+			$.get("lokacija/osma.php", function(data){
+    				$('h2').after('<center>'+data+'</center>');
+  			});
+	});
+});
+
+</script>
